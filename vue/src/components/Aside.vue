@@ -1,19 +1,20 @@
 <template>
-  <div class="sidebar" id="sidebar" v-if="$route.name != 'admin.login' && $route.name != 'login'">
+  <div
+    class="sidebar"
+    id="sidebar"
+    v-if="$route.name != 'admin.login' && $route.name != 'login'"
+  >
     <div class="sidebar-inner slimscroll">
       <div id="sidebar-menu" class="sidebar-menu">
         <ul>
           <li class="menu-title">
-            <span
-              >Main Menu
-              {{  }}</span
-            >
+            <span>Main Menu {{}}</span>
           </li>
           <li class="submenu">
-            <a href="blank-page.html#"
+            <router-link :to="{ name: 'admin.dashboard.content' }"
               ><i class="fas fa-user-graduate"></i> <span> Dashboard</span>
               <span class="menu-arrow"></span
-            ></a>
+            ></router-link>
             <ul>
               <li><a href="index.html">Admin Dashboard</a></li>
               <li><a href="teacher-dashboard.html">Teacher Dashboard</a></li>

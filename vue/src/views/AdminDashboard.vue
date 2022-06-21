@@ -3,7 +3,7 @@
     <Header></Header>
     <Aside></Aside>
     <div class="content container-fluid">
-      <slot> </slot>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -20,7 +20,6 @@ export default {
   mounted() {
     this.$store.commit("checkAuth");
   },
-
 };
 </script>
 

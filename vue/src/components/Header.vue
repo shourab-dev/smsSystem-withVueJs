@@ -1,5 +1,8 @@
 <template>
-  <div class="header" v-if="$route.name != 'admin.login' && $route.name != 'login'">
+  <div
+    class="header"
+    v-if="$route.name != 'admin.login' && $route.name != 'login'"
+  >
     <div class="header-left">
       <a href="index.html" class="logo text-dark">
         <svg
@@ -93,7 +96,9 @@
             </div>
           </div>
           <a class="dropdown-item" href="profile.html">My Profile</a>
-          <a class="dropdown-item" href="login.html">Logout</a>
+          <a class="dropdown-item" href="login.html" @click.prevent="logout"
+            >Logout</a
+          >
         </div>
       </li>
     </ul>
@@ -101,7 +106,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    logout() {
+      this.$store.commit("clearToken");
+      this.$router.push({ path: "/" });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
